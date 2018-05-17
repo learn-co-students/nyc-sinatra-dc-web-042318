@@ -6,17 +6,23 @@ class FiguresController < ApplicationController
 
   get '/figures/new' do
     @title = Title.all
+    @landmark = Landmark.all
     erb :'/figures/new'
   end
 
   post '/figures' do
     @figure = Figure.create(params[:figure])
-    if params[:title][:name].empty?
-       @figure.title << Title.create(params[:title])
+    if !params[:title][:name].empty?
+       @figure.titles << Title.create(params[:title])
     end
-    binding.pry
-    puts "fd"
+    if !params[:landmark][:name].empty?
+      @figure.landmarks << Landmark.create(params[:landmark])
+    end
+
   end
+
+
+
 
 
 end
