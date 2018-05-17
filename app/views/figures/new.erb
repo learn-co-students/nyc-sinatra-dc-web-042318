@@ -18,6 +18,21 @@
   <input type="text" name="title[name]" id="title_name">
   <br><br>
 
+
+  <label>Landmarks</label><br>
+  <ul style="list-style-type:none;">
+  <% @landmarks.each do |landmark| %>
+  <li><input type="checkbox" name="figure[landmark_ids][]" id="landmark_id" value="<%=landmark.id%>">
+    <%= landmark.name %></input></li>
+  <% end %>
+  </ul>
+
+  <label>Create New Landmark:</label><br><br>
+  Name: <input type="text" name="landmark[name]" id="landmark_name">
+  Year: <input type="number" name="landmark[year_completed]" id="landmark_year_completed">
+  <br><br>
+
+
   <input type="submit" name="submit">
 
 </form>
