@@ -1,7 +1,23 @@
-<h1>Creates a new figure!</h1>
+<h1>Create a new figure!</h1>
 
 <form method="POST" action="/figures">
   <label>Enter Name:</label>
   <input type="text" name="figure[name]" id="figure_name">
+  <br><br>
+
+  <label>Titles</label><br>
+  <ul style="list-style-type:none;">
+  <% @titles.each do |title| %>
+  <li><input type="checkbox" name="figure[title_ids][]" id="title_id" value="<%=title.id%>">
+    <%= title.name %></input></li>
+  <% end %>
+  </ul>
+  <br><br>
+
+  <label>Create New Title:</label>
+  <input type="text" name="title[name]" id="title_name">
+  <br><br>
+
   <input type="submit" name="submit">
+
 </form>
