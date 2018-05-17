@@ -3,9 +3,9 @@
     <title>All the landmarks</title>
 </head>
 <body>
-    <h1>Landmarkss</h1>
+    <h1>Landmarks</h1>
     <% @landmarks.each do |landmark| %>
-        <%= landmark.name %> <form action="landmarks/<%= landmark.id%>/edit" method="post"><button type="submit" value="Edit Landmark" id="Edit Landmark">Edit Landmark</button></form>
+        <%= landmark.name %> <%= landmark.year_completed %> <form action="landmarks/<%= landmark.id%>/edit" method="post"><button type="submit" value="Edit Landmark" id="Edit Landmark">Edit Landmark</button></form>
     <% end %>
 </body>
 </html>
