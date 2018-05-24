@@ -1,0 +1,11 @@
+<html>
+<head>
+    <title>All the figures</title>
+</head>
+<body>
+    <h1>Figures</h1>
+    <% @figures.each do |figure| %>
+        <%= figure.name %> <form action="figures/<%= figure.id%>/edit" method="post"><button type="submit" value="Edit Figure" id="Edit Figure">Edit Figure</button></form>
+    <% end %>
+</body>
+</html>
